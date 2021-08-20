@@ -1,3 +1,18 @@
+// get data
+db.collection('guides').get().then(snapshot => {
+  setupGuides(snapshot.docs);
+});
+
+
+//listen for auth status changes
+auth.onAuthStateChanged(user => {
+  if (user) {
+    console.log('user logged in: ',user);
+  } else {
+    console.log('user logged out');
+  }
+});
+
 //signup
 const signupForm =  document.querySelector('#signup-form');
 signupForm.addEventListener('submit', (e) => {
@@ -19,14 +34,12 @@ signupForm.addEventListener('submit', (e) => {
 const logout = document.querySelector('#logout');
 logout.addEventListener('click', (e) => {
   e.preventDefault();
-  auth.signOut().then(() => {
-    console.log('user sign out');
-  });
+  auth.signOut()
 });
 
 //login
 const loginForm = document.querySelector('#login-form');
-loginForm.addEventListener('submt', (e) => {
+loginForm.addEventListener('submit', (e) => {
   e.preventDefault();
 
   //get user info
@@ -34,7 +47,7 @@ loginForm.addEventListener('submt', (e) => {
   const password = loginForm['login-password'].value;
 
   auth.signInWithEmailAndPassword(email, password).then(cred => {
-    console.log(cred.user)
+   
 
     //close the login modal and reset the form
     const modal = document.querySelector('#modal-login');
