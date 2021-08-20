@@ -33,7 +33,7 @@ const setupGuides = (data) => {
   guideList.innerHTML = html;
 }
 else {
-  guideList.innerHTML = '<h5 class="center-align">Silahkan login untuk melihat data anda</h5>'
+  guideList.innerHTML = '<h5 class="center-align">Silahkan login untuk melihat data anda <br> atau <br> Daftar untuk membuat akun </h5>'
 }
 }
 
