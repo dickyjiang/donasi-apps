@@ -7,12 +7,14 @@
     <title>Donasi App</title>
 </head>
 <body class="grey lighten-3">
+
     <!-- NAVBAR -->
   <nav class="z-depth-0 grey darken-4">
     <div class="nav-wrapper container">
       <a href="#" class="brand-logo">
         <img src="img/logo.svg" style="width: 120px; margin-top: 10px;">
       </a>
+      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
           <li class="logged-in" style="display: none">
             <a href="#" class="grey-text modal-trigger" data-target="modal-account">Account</a>
@@ -33,6 +35,26 @@
       </ul>
     </div>
   </nav>
+
+  <ul class="sidenav" id="mobile-demo">
+    <li class="logged-in" style="display: none">
+      <a href="#" class="grey-text modal-trigger" data-target="modal-account">Account</a>
+    </li>
+    <li class="logged-in" style="display: none">
+      <a href="#" class="grey-text" id="logout">Logout</a>
+    </li>
+    <li class="logged-in" style="display: none">
+      <a href="#" class="grey-text modal-trigger" data-target="modal-create">Create Guide</a>
+    </li>
+    <li class="logged-out" style="display: none">
+      <a href="#" class="grey-text modal-trigger" data-target="modal-login">Login</a>
+    </li>
+    <li class="logged-out" style="display: none">
+      <a href="#" class="grey-text modal-trigger" data-target="modal-signup">Daftar</a>
+    </li>
+  </ul>
+
+
 
    <!-- SIGN UP MODAL -->
    <div id="modal-signup" class="modal">

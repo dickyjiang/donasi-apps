@@ -48,3 +48,10 @@ document.addEventListener('DOMContentLoaded', function() {
   M.Collapsible.init(items);
 
 });
+
+//add mobile ver
+document.addEventListener('DOMContentLoaded', function() {
+  var elems = document.querySelectorAll('.sidenav');
+  var instances = M.Sidenav.init(elems, options);
+});
+
